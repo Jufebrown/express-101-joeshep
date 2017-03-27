@@ -4,5 +4,6 @@ const router = Router()
 
 router.use(require('./animals'))
 router.use(require('./games'))
+router.use(require('./baby'))
 
 module.exports = router
