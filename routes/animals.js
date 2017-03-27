@@ -1,23 +1,19 @@
 const {Router} = require('express')
 const path = require('path')
+const animal = require('../controllers/animalCtrl')
+const {knew, submit} = require('../controllers/animalCtrl')
 
 const animalRouter = Router()
 
 animalRouter.get(`/monkeys`, (req, res, next) => {
   console.log('Fetching some monkeys')
   console.log(`This ran at ${req.requestTime}`)
-  res.sendFile(path.join(__dirname, '../public', 'monkeys.html'))
+  animal.knew(req,res, null)
 })
 
-animalRouter.get(`/chickens`, (req, res, next) => {
-  console.log('looking for chickens')
-  res.send(`<h3>No chickens for you</h3><form method="POST"><input type="text"><button type="submit">push</button></form>`)
-})
+animalRouter.get(`/chickens`, knew)
 
-animalRouter.post('/chickens', (req, res, next) => {
-  console.log('Posting some chickens')
-  res.send('Nothing here but us chickens')
-})
+animalRouter.post('/chickens', submit)
 
 
 module.exports = animalRouter
