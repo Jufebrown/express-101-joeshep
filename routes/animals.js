@@ -16,6 +16,7 @@ animalRouter.get(`/chickens`, (req, res, next) => {
 
 animalRouter.post('/chickens', (req, res, next) => {
   console.log('Posting some chickens')
+  res.send('Nothing here but us chickens')
 })
 
 

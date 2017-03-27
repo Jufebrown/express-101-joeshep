@@ -15,6 +15,7 @@ gameRouter.get('/videogames', (req, res, next) => {
 
 gameRouter.post('/videogames', (req, res, next) => {
   console.log()
+  res.send('nothing here but us videogames')
 })
 
 module.exports = gameRouter
